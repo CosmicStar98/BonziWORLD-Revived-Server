@@ -9,6 +9,8 @@ const sleep = require("util").promisify(setTimeout);
 const axios = require('axios').default;
 const fs = require('fs');
 
+
+// bruh
 process.on("uncaughtException", function(err) {
   console.log(err.stack);
   throw err;
