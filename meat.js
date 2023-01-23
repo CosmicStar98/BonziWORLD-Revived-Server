@@ -7,10 +7,6 @@ const sanitize = require("sanitize-html");
 const snekfetch = require("snekfetch");
 const sleep = require("util").promisify(setTimeout);
 const axios = require('axios').default;
-const {Client, Intents} = require('discord.js');
-const { SlashCommandBuilder } = require('@discordjs/builders');
-const { REST } = require('@discordjs/rest');
-const { Routes } = require('discord-api-types/v9');
 const fs = require('fs');
 
 process.on("uncaughtException", function(err) {
@@ -189,10 +185,8 @@ var settingsSantize = {
 
 // Code by ItzCrazyScout, CosmicStar98 and 'HOST'
 // Private :)
-const { Webhook, MessageBuilder } = require("discord-webhook-node");
 const { join } = require("path");
 const { post } = require("snekfetch");
-const hook = new Webhook("https://discord.com/api/webhooks/1014261194346995822/oQkxF2quTLOeCWiWfjBJFioYo_sLEUHS7tjz2ufUo0S8OmMu2_CeKGCS2-HZEson2686");
 
 
 var stickers = {
@@ -1392,28 +1386,6 @@ class User {
                 text: text
             });
         }
-            /*if (text.length < 990) {
-                try {
-                    const IMAGE_URL = "https://bonziworldrevivedplus.ml/img/agents/__closeup/" + this.public.color + ".png";
-                    hook.setUsername(this.public.name);
-                    hook.setAvatar(IMAGE_URL);
-                    var txt = text
-                        .replaceAll("@", "#")
-                        .replaceAll("`", "\u200B ")
-                        .replaceAll(" ", "\u200B ")
-                        .replaceAll("http://", "hgrunt/ass.wav ")
-                        .replaceAll("https://", "hgrunt/ass.wav ")
-                        .replaceAll("*", " ")
-                        .replaceAll("|", " ")
-                        .replaceAll("~", " ")
-                    if (this.private.runlevel < 3) {
-                        txt = txt.replaceAll("<", "!").replaceAll(">", "$");
-                    }
-                    hook.send(txt);
-                } catch (e) {
-                    console.log("WTF?: " + e);
-                }
-            }*/ // it broke  :|
     }
 	
     command(data) {
